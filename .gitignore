@@ -1,0 +1,3 @@
+# Local-only outputs. Do not commit: they may contain LOUD material
+# whose license is unconfirmed. Discovery scripts write here by default.
+observations/
