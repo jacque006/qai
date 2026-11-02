@@ -24,3 +24,13 @@ If it says `NOT found`, the hook loaded before the base file. Report that, with 
 ## Uninstall
 
 Delete the `QAI` folder from `usermods`. Nothing else was changed.
+
+## Attribution
+
+This mod is built on the LOUD AI, by the LOUD Project and its contributors
+(https://github.com/LOUD-Project/Git-LOUD). The LOUD team has confirmed that LOUD AI
+code may be used when its authorship is credited publicly. This mod does not include
+or redistribute LOUD files. It hooks into them at runtime.
+
+The bundled LOUD mods (for example Total Mayhem, BlackOps, and 4th Dimension) are not
+covered by LOUD's permission. This mod does not use their files.
