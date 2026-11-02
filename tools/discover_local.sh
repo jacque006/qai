@@ -99,7 +99,20 @@ report() {
       echo "### headings (text files only)"
       (cd "$GAME_DIR" && find LOUD/doc -type f -print0 | sort -z | while IFS= read -r -d '' f; do
         if grep -qI . "$f" 2>/dev/null; then
-          hits=$(grep -nE '^#{1,6} ' "$f" | head -n 40)
+          # Plain-text headings: markdown '#' lines, ALL-CAPS title lines, or a title line
+          # followed by an underline of =, -, ~ or _ characters. Prints line numbers and the
+          # heading text only.
+          hits=$(awk '
+            { lines[NR] = $0 }
+            END {
+              for (i = 1; i <= NR; i++) {
+                l = lines[i]
+                # Portable awk only (no interval expressions), so use explicit checks.
+                if (l ~ /^#+ / && substr(l, 1, 1) == "#") { printf "%d:%s\n", i, l; continue }
+                if (length(l) >= 4 && l == toupper(l) && l ~ /[A-Z][A-Z][A-Z][A-Z]/) { printf "%d:%s\n", i, l; continue }
+                if (i < NR && l ~ /[A-Za-z]/ && length(lines[i + 1]) >= 4 && lines[i + 1] ~ /^[=~_-]+$/) { printf "%d:%s\n", i, l }
+              }
+            }' "$f" | head -n 40)
           if [ -n "$hits" ]; then
             echo "-- $f"
             printf '%s\n' "$hits"
@@ -117,8 +130,40 @@ report() {
           fi
         fi
       done)
+      echo
+      echo "### non-text docs (not parsed; flagged for manual review)"
+      (cd "$GAME_DIR" && find LOUD/doc -type f -print0 | sort -z | while IFS= read -r -d '' f; do
+        if ! grep -qI . "$f" 2>/dev/null; then
+          echo "MANUAL REVIEW: $f"
+        fi
+      done)
     else
       echo "LOUD/doc: NOT FOUND"
+    fi
+    echo
+
+    echo "## 2b. Archive contents (.scd filenames only; nothing is extracted or read inside)"
+    scd_list=$(cd "$GAME_DIR" && find LOUD -maxdepth 3 -type f -name '*.scd' | sort)
+    if [ -n "$scd_list" ]; then
+      while IFS= read -r scd; do
+        echo "-- $scd"
+        names=""
+        if command -v zipinfo >/dev/null 2>&1; then
+          names=$(cd "$GAME_DIR" && zipinfo -1 "$scd" 2>/dev/null)
+        elif command -v unzip >/dev/null 2>&1; then
+          names=$(cd "$GAME_DIR" && unzip -Z1 "$scd" 2>/dev/null)
+        elif command -v python3 >/dev/null 2>&1; then
+          names=$(cd "$GAME_DIR" && python3 -I -c 'import sys,zipfile
+for n in zipfile.ZipFile(sys.argv[1]).namelist(): print(n)' "$scd" 2>/dev/null)
+        fi
+        if [ -n "$names" ]; then
+          printf '%s\n' "$names" | head -n 400
+        else
+          echo "  NOT FOUND (could not list; no zipinfo, unzip, or python3 available or not a zip)"
+        fi
+      done <<< "$scd_list"
+    else
+      echo "*.scd under LOUD/: NOT FOUND"
     fi
     echo
 
@@ -168,6 +213,27 @@ report() {
     fi
   else
     echo "prefix: NOT FOUND"
+  fi
+  echo
+
+  echo "## 6. Proton game-log directory (inside prefix; top-level *.log only)"
+  if [ -n "$prefix" ]; then
+    logdir="$prefix/pfx/drive_c/users/steamuser/My Documents/My Games/Gas Powered Games/Supreme Commander Forged Alliance"
+    if [ -d "$logdir" ]; then
+      echo "log_dir: FOUND"
+      dlogs=$(find "$logdir" -maxdepth 1 -type f -name '*.log' -printf '%s %T@ %f\n' 2>/dev/null | sort -k3 | head -n 50)
+      if [ -n "$dlogs" ]; then
+        while IFS=' ' read -r size mtime name; do
+          printf '  %s bytes  modified: %s  %s\n' "$size" "$(age_of "${mtime%.*}")" "$name"
+        done <<< "$dlogs"
+      else
+        echo "  NOT FOUND (no top-level *.log in log dir)"
+      fi
+    else
+      echo "log_dir: NOT FOUND"
+    fi
+  else
+    echo "log_dir: NOT FOUND (no compatdata prefix)"
   fi
   echo
   echo "## end"
