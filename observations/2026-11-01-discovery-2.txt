@@ -1,0 +1,287 @@
+# QAI discovery observation
+# harvester: tools/discover_local.sh   date: 2026-11-01   app_id: 9420
+# Paths are normalized. Excerpts are matched fragments only, never full source lines.
+
+## 0. Locations
+game_install: FOUND (library probed: default roots)
+
+## 1. Tree map (LOUD/, top two levels)
+d LOUD/bin
+d LOUD/doc
+d LOUD/gamedata
+d LOUD/maps
+d LOUD/maps/3Roads
+d LOUD/maps/4 double island v2
+d LOUD/maps/7 winged arena
+d LOUD/maps/Alpha 7 40
+d LOUD/maps/Amazonia
+d LOUD/maps/Armed and Dangerous
+d LOUD/maps/Barrier Islands
+d LOUD/maps/Battle Isles 40
+d LOUD/maps/Blasted_20
+d LOUD/maps/Burial Mounds 20
+d LOUD/maps/Burial Mounds 40
+d LOUD/maps/Caldera
+d LOUD/maps/Central Mound
+d LOUD/maps/CityWarsIII.v0001
+d LOUD/maps/Coastal Conflict
+d LOUD/maps/Cold Valley
+d LOUD/maps/Desert Island 40
+d LOUD/maps/Diezle Dune 40
+d LOUD/maps/Element of Threat
+d LOUD/maps/Emerald Crater 40
+d LOUD/maps/Fields of Isis 20
+d LOUD/maps/Fields of Isis 40
+d LOUD/maps/Flooded Strip Mine 40
+d LOUD/maps/Gap of Rohan
+d LOUD/maps/Gentlemans Reef
+d LOUD/maps/Hellgate
+d LOUD/maps/Hellgate_LowTide
+d LOUD/maps/Hills of Havoc
+d LOUD/maps/Hrungdaks Dryland
+d LOUD/maps/Ians Cross
+d LOUD/maps/Iced Mountains
+d LOUD/maps/Kazam_40
+d LOUD/maps/Lagoon_xl
+d LOUD/maps/Lost Paradise ii
+d LOUD/maps/LostTemple
+d LOUD/maps/Ocean Scamps
+d LOUD/maps/Painted Desert
+d LOUD/maps/Painted Desert 40
+d LOUD/maps/Seraphim Planet
+d LOUD/maps/Setons Clutch
+d LOUD/maps/Setons Clutch 40
+d LOUD/maps/Shards
+d LOUD/maps/SpineofZeus
+d LOUD/maps/Thawing Glacier 20
+d LOUD/maps/Thawing Glacier 40
+d LOUD/maps/The Great 2-0
+d LOUD/maps/The Pass
+d LOUD/maps/The Wilderness 40
+d LOUD/maps/Tribal Lands
+d LOUD/maps/Twin Rivers
+d LOUD/maps/ValleyPassage
+d LOUD/maps/Varga
+d LOUD/maps/Voodoo Bridge
+d LOUD/maps/anussons playground
+d LOUD/maps/hills of havoc wet
+d LOUD/sounds
+d LOUD/sounds/voice
+d LOUD/usermaps
+d [REDACTED]
+d [REDACTED]
+d LOUD/usermaps/AlienFormation
+d LOUD/usermaps/AlienFormation20
+d LOUD/usermaps/Archsimkats Valley
+d [REDACTED]
+d LOUD/usermaps/Bastion
+d LOUD/usermaps/Bastion_MkII
+d LOUD/usermaps/Bedstraw
+d LOUD/usermaps/Betrayal_Ocean
+d LOUD/usermaps/Betrayal_Ocean40
+d LOUD/usermaps/Big_Wonder.v0006
+d LOUD/usermaps/Borgin_X40
+d LOUD/usermaps/Bridged_Islands
+d LOUD/usermaps/BugFight
+d LOUD/usermaps/Burial_Mounds_(80km)
+d LOUD/usermaps/Canis_River
+d LOUD/usermaps/Canyon
+d LOUD/usermaps/City_Territory
+d LOUD/usermaps/ConcordLake
+d LOUD/usermaps/CookieIsland
+d LOUD/usermaps/Cooperation
+d LOUD/usermaps/CragDunes
+d LOUD/usermaps/Dawn
+d LOUD/usermaps/DesertOasis
+d LOUD/usermaps/District_Force
+d LOUD/usermaps/Ditch_Reborn
+d LOUD/usermaps/DrakesRavine
+d [REDACTED]
+d LOUD/usermaps/Dry_Harbours
+d LOUD/usermaps/Endless_Sands
+d LOUD/usermaps/Europas_40km
+d LOUD/usermaps/Eye of the Storm
+d LOUD/usermaps/Fahrenheit
+d LOUD/usermaps/FataMorgana
+d LOUD/usermaps/FinalFoughts_4v4
+d LOUD/usermaps/Fireinthehole
+d LOUD/usermaps/Forgotten_Waters
+d LOUD/usermaps/Frithen
+d LOUD/usermaps/FrogsEnd
+d LOUD/usermaps/Full_Control
+d [REDACTED]
+d LOUD/usermaps/Gentlemans Reef (80km)
+d LOUD/usermaps/GoldRush
+d LOUD/usermaps/Grakka IV
+d LOUD/usermaps/Halcyons_Ante
+d LOUD/usermaps/HavenofWar
+d LOUD/usermaps/Hazard_Course
+d LOUD/usermaps/Hillstorm_Heights
+d LOUD/usermaps/Hourglass
+d LOUD/usermaps/IcyCauldron
+d LOUD/usermaps/Jaina
+d LOUD/usermaps/Kaali
+d LOUD/usermaps/KingoftheBridge
+d LOUD/usermaps/Kragon_40
+d LOUD/usermaps/Lagoon_xl
+d LOUD/usermaps/Lava_Bridge
+d [REDACTED]
+d LOUD/usermaps/Mars
+d LOUD/usermaps/Mauve.v0005
+d LOUD/usermaps/Metyr Icecaps
+d LOUD/usermaps/Minas
+d LOUD/usermaps/Neroxis
+d LOUD/usermaps/Normalles
+d LOUD/usermaps/Ocean_Scamps_V2
+d LOUD/usermaps/Open_Palms
+d LOUD/usermaps/Ophir_Chasma
+d LOUD/usermaps/PradiseCross
+d LOUD/usermaps/Quadtropolis
+d LOUD/usermaps/River_Delta
+d LOUD/usermaps/Riverside_Rampage
+d LOUD/usermaps/RockBottom
+d LOUD/usermaps/Root_of_Beta.v0001
+d LOUD/usermaps/Sanctuary
+d LOUD/usermaps/Sattire.v0002
+d LOUD/usermaps/Scorched_Earth
+d LOUD/usermaps/SeaPot
+d LOUD/usermaps/Sea_of_Arrakis
+d LOUD/usermaps/SeaofMorgh
+d LOUD/usermaps/Sentry_Point
+d LOUD/usermaps/SeraphimLake
+d LOUD/usermaps/Seraphim_Glaciers
+d LOUD/usermaps/Seraphim_Outpost
+d LOUD/usermaps/Shards_80km
+d LOUD/usermaps/Skadi
+d LOUD/usermaps/Slaughter_Pit
+d LOUD/usermaps/Springtime
+d LOUD/usermaps/StaringEyes
+d LOUD/usermaps/TheFrozenOne
+d LOUD/usermaps/The_Great_2.0_3X
+d LOUD/usermaps/The_Huntress
+d LOUD/usermaps/The_longest_way.v0005
+d LOUD/usermaps/Theta_Passage
+d [REDACTED]
+d LOUD/usermaps/Toxic_mire.v0005
+d [REDACTED]
+d [REDACTED].v0011
+d LOUD/usermaps/Two_Step_Shuffle.v0003
+d LOUD/usermaps/Uuleyaths_Landing
+d [REDACTED]
+d LOUD/usermaps/Voodoo_Castle
+d LOUD/usermaps/Water_Lilies
+d [REDACTED]
+d LOUD/usermaps/Winter_Duel
+d LOUD/usermaps/World
+d LOUD/usermaps/Wraith_Advance
+d LOUD/usermaps/Wreck_Canyon
+d LOUD/usermaps/Zero_point
+d LOUD/usermaps/aPathBeyond40
+d LOUD/usermaps/adaptive_moon.v0002
+d LOUD/usermaps/autumn.v0003
+d LOUD/usermaps/boreal_nexus
+d LOUD/usermaps/dualgap
+d LOUD/usermaps/dunes_of_arracis
+d LOUD/usermaps/glancing_blows
+d LOUD/usermaps/islet
+d LOUD/usermaps/lily_pads
+d LOUD/usermaps/mellow_shallows.v0016
+d LOUD/usermaps/project_dust
+d LOUD/usermaps/project_mesa
+d [REDACTED]
+d LOUD/usermaps/serenity_desert
+d LOUD/usermaps/shoeshores
+d LOUD/usermaps/zone51
+f [REDACTED].scd
+f [REDACTED].scd
+f [REDACTED].scd
+f [REDACTED].scd
+f [REDACTED].scd
+f [REDACTED].scd
+f LOUD/bin/CommonDataPath.lua
+f LOUD/bin/LoudDataPath.lua
+f LOUD/bin/loud.ico
+f LOUD/bin/shortcut.vbs
+f LOUD/doc/GAZ_UI.txt
+f LOUD/doc/Graphics Settings.txt
+f LOUD/doc/Help.txt
+f LOUD/doc/MassFabReadMe.txt
+f LOUD/doc/SC_Music ReadMe.txt
+f LOUD/doc/Unit Spreadsheet.ods
+f [REDACTED].scd
+f LOUD/gamedata/SC_Music.scd
+f LOUD/gamedata/TotalMayhem.scd
+f LOUD/gamedata/WyvernBattlePack.scd
+f LOUD/gamedata/blackops.scd
+f LOUD/gamedata/brewlan.scd
+f LOUD/gamedata/civ_units.scd
+f LOUD/gamedata/effects.scd
+f LOUD/gamedata/env.scd
+f LOUD/gamedata/extra_env.scd
+f LOUD/gamedata/loc_US.scd
+f LOUD/gamedata/loud_misc.scd
+f LOUD/gamedata/loud_units.scd
+f LOUD/gamedata/lua.scd
+f LOUD/gamedata/projectiles.scd
+f LOUD/gamedata/textures.scd
+f LOUD/gamedata/units.scd
+f LOUD/sounds/BattlePackSB.xsb
+f LOUD/sounds/BattlePackWB.xwb
+f LOUD/sounds/blackopssb.xsb
+f LOUD/sounds/blackopswb.xwb
+f LOUD/sounds/fapsb.xsb
+f LOUD/sounds/fapwb.xwb
+f LOUD/sounds/sc_music.xsb
+f LOUD/sounds/sc_music.xwb
+f LOUD/sounds/tm_aeonweapons.xsb
+f LOUD/sounds/tm_aeonweaponsounds.xwb
+f LOUD/sounds/tm_aircrafts.xsb
+f LOUD/sounds/tm_aircraftsounds.xwb
+f LOUD/sounds/tm_cybranweapons.xsb
+f [REDACTED].xwb
+f LOUD/sounds/tm_explosions.xsb
+f LOUD/sounds/tm_explosionsounds.xwb
+f LOUD/sounds/tm_uefweapons.xsb
+f LOUD/sounds/tm_uefweaponsounds.xwb
+
+## 1b. AI-hinting names under LOUD/gamedata and LOUD/bin
+(names are matched case-insensitively and loosely; expect false positives)
+
+## 2. Documentation digest (LOUD/doc)
+1127 bytes  LOUD/doc/SC_Music ReadMe.txt
+1231 bytes  LOUD/doc/MassFabReadMe.txt
+140891 bytes  LOUD/doc/Unit Spreadsheet.ods
+14425 bytes  LOUD/doc/GAZ_UI.txt
+402 bytes  LOUD/doc/Graphics Settings.txt
+6397 bytes  LOUD/doc/Help.txt
+
+### headings (text files only)
+
+### keyword hits (line numbers and matched fragments only, max 15 per file)
+-- LOUD/doc/GAZ_UI.txt
+66:engineers
+256:engineers
+257:engineers
+298:engineer
+299:engineer
+302:engineers
+303:engineers
+304:engineers
+340:engineers
+340:Engineers
+341:Engineering
+-- LOUD/doc/Help.txt
+9:configuration
+
+## 3. Candidate knob hunt (path:line and matched fragment only; max 200 hits)
+(no candidate knob matches)
+
+## 4. Log location probe
+game_dir *.log files:
+  NOT FOUND
+
+## 5. Proton compatdata prefix (app 9420), top-level *.log only
+prefix: FOUND
+  NOT FOUND (no top-level *.log in prefix)
+
+## end
