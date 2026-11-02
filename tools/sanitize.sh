@@ -17,6 +17,12 @@ export LC_ALL=C
 
 readonly REDACT='[REDACTED]'
 
+# Long base64/hex blob: 32+ token characters with no dot, so file names such as
+# 'aiutilities.lua' or 'lua.scd/lua/AI/x.lua' keep their structure.
+BLOB_LEFT='(^|[^A-Za-z0-9+/=_.-])'
+BLOB_RUN='[A-Za-z0-9+/=_-]{32,}'
+BLOB_RIGHT='([^A-Za-z0-9+/=_.-]|$)'
+
 # Denylist. Each entry is an ERE. Order matters only for readability; each is applied in turn.
 PATTERNS=(
   '[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}'   # email addresses
@@ -30,7 +36,6 @@ PATTERNS=(
   'sk-[A-Za-z0-9_-]{8,}'                              # API key shape
   'ghp_[A-Za-z0-9]{20,}'                              # GitHub token shape
   'AKIA[0-9A-Z]{16}'                                  # AWS access key shape
-  '[A-Za-z0-9+/=_-]{32,}'                             # long base64 / hex blobs
 )
 
 # Literal expanded home directory -> the token $HOME. Escape sed-special characters.
@@ -47,6 +52,7 @@ sanitize_stream() {
   for p in "${PATTERNS[@]}"; do
     sed_args+=(-e "s#${p}#${REDACT}#g")
   done
+  sed_args+=(-e "s#${BLOB_LEFT}${BLOB_RUN}${BLOB_RIGHT}#\\1${REDACT}\\2#g")
   sed -E "${sed_args[@]}"
 }
 
@@ -56,7 +62,7 @@ check_file() {
     echo "sanitize: cannot read '$f'" >&2
     return 2
   fi
-  for p in "${PATTERNS[@]}"; do
+  for p in "${PATTERNS[@]}" "${BLOB_LEFT}${BLOB_RUN}${BLOB_RIGHT}"; do
     while IFS= read -r n; do
       hits+=("$n")
     done < <(grep -nE -- "$p" "$f" 2>/dev/null | cut -d: -f1)
