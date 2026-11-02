@@ -125,6 +125,17 @@ case "${1:-}" in
     exit 0
     ;;
   "")
+    if [ -t 0 ]; then
+      cat >&2 <<'EOF'
+sanitize.sh: no input given. It reads text from standard input and writes sanitized text to standard output.
+
+  tools/sanitize.sh < raw.txt > clean.txt        sanitize a file
+  printf 'text\n' | tools/sanitize.sh            sanitize piped text
+  tools/sanitize.sh --check FILE                 scan FILE; exit 1 if anything suspicious remains
+  tools/sanitize.sh --selftest                   run built-in checks of the denylist
+EOF
+      exit 2
+    fi
     sanitize_stream
     ;;
   *)
